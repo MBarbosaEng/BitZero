@@ -1,4 +1,4 @@
-#BitZero
+﻿# BitZero
 
 BitZero is a modification of Dropplets blogging platform. Uses the same concept, but has implementations that do not exist in Dropplets platform.
 
@@ -30,13 +30,10 @@ Markdown is a text formatting syntax inspired on plain text email. It is extreme
 
 ## Getting Started
 - [Installation](#installation)
-- [Writing Posts](#writing-posts)
-- [Publishing Posts](#publishing-posts)
-- [Editing Posts](#editing-posts)
-- [Changing Settings](#changing-settings)
-- [Changing Templates](#changing-templates)
-- [Updating Dropplets](#updating-dropplets)
-- [License](#license)
+- [Posts](#posts)
+- [Dropplets License](#dropplets-license)
+- [BitZero Modifications](#bitzero-modifications)
+- [BitZero License](#bitzero-license)
 
 ## Installation
 Dropplets is compatible with most server configurations and can be typically installed in under a minute using the few step-by-step instructions below:
