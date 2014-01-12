@@ -1,0 +1,72 @@
+
+body.dp-install {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #808080;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+}
+body.dp-install form {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.01);
+    width: 320px;
+    height: 370px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -171px 0 0 -161px;
+    padding: 20px;
+}
+.input-group{
+    padding-bottom: 10px !important;
+}
+.dp-icon-setup {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 140px;
+    line-height: 90px !important;
+    color: #1096d7;
+    width: 160px;
+    height: 130px;
+    float: left;
+    margin: -50px 0 0 60px;
+}
+.dp-icon-setup:before {    
+    content: "\f007";
+}
+body.dp-install h2 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+}
+body.dp-install form button {
+    background-color: #4ebb44;
+    border: none;
+    font-family: "dropplets";
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: -35px;
+    left: 160px;
+    margin-left: -35px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-transition-duration: 0.1s;
+    -webkit-transition-duration: 0.1s;
+}
