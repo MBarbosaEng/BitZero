@@ -92,7 +92,7 @@ If you have any feature suggestion, please contact us.
 - Corrected the minimum amount of post and category.
 - Added trim to the name used for the search Avatar.
 - Locale date format for old PHP.
-- - Data recovery on remote servers using the cURL module.
+- Data recovery on remote servers using the cURL module.
 
 #### New Features
 
