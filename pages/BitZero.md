@@ -1,4 +1,4 @@
-#BitZero
+﻿#BitZero
 - MBarbosaEng
 - MBarbosaEng
 - 2013/04/28
@@ -39,7 +39,7 @@ Markdown is a text formatting syntax inspired on plain text email. It is extreme
 - [Changing Settings](#changing-settings)
 - [Changing Templates](#changing-templates)
 - [Updating Dropplets](#updating-dropplets)
-- [License](#license)
+- [Dropplets License](#dropplets-license)
 - [BitZero Modifications](#bitzero-modifications)
 - [BitZero License](#bitzero-license)
  
@@ -104,7 +104,7 @@ To change your blog template, click the star icon in the Dropplets toolbar. This
 ## Updating Dropplets
 Eventually, we will be implementing auto-updates for the Dropplets platform, but until then, just replace everything but your **posts** directory and **config.php** when we release a new version of Dropplets.
 
-## License
+## Dropplets License
 Copyright (c) 2013 Circa75 Media, LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
