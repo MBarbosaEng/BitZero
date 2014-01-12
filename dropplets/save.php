@@ -221,6 +221,8 @@ if ($_POST["submit"] == "submit" && (!file_exists($settings_file) || isset($_SES
         $htaccess[] = "</FilesMatch>";
         // Generate the .htaccess file.
         file_put_contents($htaccess_file, implode("\n", $htaccess));
+        //don't need this: chmod($dir . "cache/",0777); - see line 94 of bitzero_avatar_functions
+        //                                               (sometimes have problems with Windows or provider)
     }
 
     // Redirect

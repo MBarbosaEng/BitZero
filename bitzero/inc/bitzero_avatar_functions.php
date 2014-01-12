@@ -91,10 +91,10 @@ function get_myProfile_img($qImg,$qId){
 		}
 
 		if (!file_exists($cache_image)) {
-            $image = file_get_contents($image_url);
-            // sometimes have problems with windows - replace above for this:
-            //$lurl = get_fcontent($image_url);
-            //$image = $lurl[0];
+            //$image = file_get_contents($image_url);
+            // sometimes have problems with Windows or provider - replace above for this:
+            $lurl = get_fcontent($image_url);
+            $image = $lurl[0];
      
 			if (($image == "")||($image === FALSE)||(stripos($image,'404')>0)||(stripos($image,'status')>0)||(stripos($image,'meta')>0)||(stripos($image,'response')>0)) {
 				return '';
