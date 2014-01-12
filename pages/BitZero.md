@@ -19,9 +19,11 @@ and much more.
 Some implementations made ​​aimed at improving the performance of the platform, other ease of use for users.
 Features found may have been implemented in Dropplets platform or not. For further reference, please visit the platform, so you can compare and choose the most ideal for your use case. 
 
-**Dropplets GitHub**: https://github.com/circa75/dropplets or **http://bit.ly/Dropplets** 
+**BitZero GitHub**: https://github.com/MBarbosaEng/BitZero or URL: **[http://bit.ly/BitZero](http://bit.ly/BitZero)**
 
-**BitZero GitHub**: https://github.com/MBarbosaEng/BitZero or URL: **http://bit.ly/BitZero**
+**BitZero Demo**: **[http://bit.ly/BitZeroDemo](http://bit.ly/BitZeroDemo)**
+
+**Dropplets GitHub**: https://github.com/circa75/dropplets or **[http://bit.ly/Dropplets](http://bit.ly/Dropplets)**
 
 ## What's Dropplets?
 Dropplets is a minimalist **Markdown** blogging platform focused on delivering just what you need in a blogging solution, but absolutely nothing you don't. When it comes to basic blogging, all you really want to do is write & publish which is where Dropplets excels. It's databaseless, so it installs on any server in just about 30 seconds. 
@@ -134,6 +136,7 @@ If you have any feature suggestion, please contact us.
 
 - Corrected the minimum amount of post and category.
 - Added trim to the name used for the search Avatar.
+- Locale date format for old PHP
 
 #### New Features
 

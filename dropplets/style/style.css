@@ -640,3 +640,6 @@ body.dp-install form input[type="text"] {
 .dp-row {
     height: 20px !important;
 }
+.profile{
+    min-height: 64px !important;
+}

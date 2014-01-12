@@ -42,7 +42,7 @@ define('BLOG_FACEBOOK', $blog_facebook);
 define('BLOG_GOOGLEP', $blog_googlep);
 define('BLOG_TUMBLR', $blog_tumblr);
 define('BLOG_URL', $blog_url);
-define('BLOG_PATH', str_replace("dropplets","",str_replace("\\","/",realpath(__DIR__)))); // for use with windows
+define('BLOG_PATH', str_replace("dropplets","",str_replace("\\","/",dirname(__FILE__)))); // for use with windows
 define('BLOG_TITLE', $blog_title);
 define('META_DESCRIPTION', $meta_description);
 define('INTRO_TITLE', trim($intro_title));

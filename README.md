@@ -14,9 +14,11 @@ and much more.
 Some implementations made ​​aimed at improving the performance of the platform, other ease of use for users.
 Features found may have been implemented in Dropplets platform or not. For further reference, please visit the platform, so you can compare and choose the most ideal for your use case.
 
-**Dropplets GitHub**: https://github.com/circa75/dropplets or **[http://bit.ly/Dropplets](http://bit.ly/Dropplets)**
-
 **BitZero GitHub**: https://github.com/MBarbosaEng/BitZero or URL: **[http://bit.ly/BitZero](http://bit.ly/BitZero)**
+
+**BitZero Demo**: **[http://bit.ly/BitZeroDemo](http://bit.ly/BitZeroDemo)**
+
+**Dropplets GitHub**: https://github.com/circa75/dropplets or **[http://bit.ly/Dropplets](http://bit.ly/Dropplets)**
 
 
 ## Dropplets
@@ -89,6 +91,7 @@ If you have any feature suggestion, please contact us.
 
 - Corrected the minimum amount of post and category.
 - Added trim to the name used for the search Avatar.
+- Locale date format for old PHP
 
 #### New Features
 

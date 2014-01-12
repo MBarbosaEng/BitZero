@@ -1,4 +1,15 @@
-
+.dp-thumbnail img {
+	width: 40px !important;
+	height: 40px !important;
+	background-color: #ffffff !important; /* #fbfbfb; */
+	border: 1px solid #ebebeb;
+	border-radius: 50% !important;
+	padding: 4px;
+	float: right;
+	margin-right: -21px;
+	-moz-transition-duration: 0.05s;
+	-webkit-transition-duration: 0.05s;
+}
 body.dp-install {
     margin: 0;
     padding: 0;

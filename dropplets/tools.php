@@ -54,7 +54,13 @@ if (!isset($_SESSION['user'])) { ?>
         <div class="dp-row">
             <div class="dp-icon dp-icon-dropplets"></div>
             <div class="dp-content"><?php _e('What is This?'); ?></div>
-            <a class="dp-link" href="http://dropplets.com" target="_blank"></a>
+             <a class="dp-link" href="<?php
+            if(file_exists(BLOG_PATH  . "bitzero/inc/bitzero_menu_tag.php")) {
+                echo "http://www.engbit.com.br";
+            } else {
+                echo "http://dropplets.com";
+            }
+            ?>" target="_blank"></a>
         </div>
     </div>
 </div>
