@@ -37,14 +37,14 @@ Markdown is a text formatting syntax inspired on plain text email. It is extreme
 - [BitZero Modifications](#bitzero-modifications)
 - [BitZero License](#bitzero-license)
 
-## Installation
+## <a name="installation"></a>Installation
 Dropplets is compatible with most server configurations and can be typically installed in under a minute using the few step-by-step instructions below:
 
 1. Download the latest **release** and then extract the downloaded zip file.
 3. Upload the entire contents of the extracted zip file to your web server wherever you want Dropplets to be installed. 
 4. Pull up your site in any modern web browser (e.g. if you uploaded Dropplets to **yoursite.com**, load **yoursite.com** in your browser to finish the installation), then create and confirm your password.
 
-## Posts
+## <a name="posts"></a>Posts
 The BitZero has different resources on a few points that may have not yet been deployed in Dropplets.
 
 To better understand the differences, read the initial installation of the system static pages:
@@ -59,7 +59,7 @@ Or visit the following repositories:
 **Dropplets GitHub**: https://github.com/circa75/dropplets or **[http://bit.ly/Dropplets](http://bit.ly/Dropplets)**
 
 
-## Dropplets License
+## <a name="dropplets-license"></a>Dropplets License
 Copyright (c) 2013 Circa75 Media, LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -70,7 +70,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---
 
-## BitZero Modifications
+## <a name="bitzero-modifications"></a>BitZero Modifications
 
 This is a version of the original system Dropplets.
 Some features may not yet be present in the original version, or are not yet deployed.
@@ -202,7 +202,9 @@ In the case of Twitter and Tumblr, check the existing file in the README.md:
 
 Another solution is to disable the loading of templates (show / hide) in the setup menu.
 
-## BitZero License
+Remember to respect the copyright and rules of each author.
+
+## <a name="bitzero-license"></a>BitZero License
 Copyright (c) 2013 M Barbosa (MBarbosaEng), EngBit
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
