@@ -80,7 +80,7 @@ Always refer to the original design.
 
 If you have any feature suggestion, please contact us.
 
-- [Version 1.04](#Version-1.05)
+- [Version 1.05](#Version-1.05)
 - [Version 1.04](#Version-1.04)
 - [Version 1.03](#Version-1.03)
 - [Version 1.02](#Version-1.02)
