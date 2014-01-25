@@ -146,18 +146,19 @@ If you have any feature suggestion, please contact us.
 > Put in the site root (./favicon.png)
 
 - Font Merriweather and Source Sans Pro
-> First searches for the file ./src/fonts/fonts.css
+> First searches for the file ./bitzero/other_sources/fonts/fonts.css
 
 - Loading.gif
-> First searches for the file ./src/imgs/loading.gif
+> First searches for the file ./bitzero/imgs/loading.gif
 
 - Modernizr.js
-> Located in ./src/js/modernizr.custom.js
+> Located in ./bitzero/js/modernizr.custom.js
 
 - Jquery-1.10.2.min.js
-> First searches for the file ./src/js/
+> First searches for the file ./bitzero/js/jquery-1.10.2.min.js
 
-- Menu.css
+- Menu.css ()
+> Located in ./bitzero/css/menu.css 
 > If you want to customize the menu, copy the file to the directory of your template and change as desired.
 
 
