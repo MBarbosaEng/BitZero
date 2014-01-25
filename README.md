@@ -66,9 +66,9 @@ Or visit the following repositories:
 
 **Dropplets GitHub**: https://github.com/circa75/dropplets or **[http://bit.ly/Dropplets](http://bit.ly/Dropplets)**
 
-## <a name="demo"></a>Demo
+## <a name="demo"></a>Demos
 
-BitZero Demo: **[http://bit.ly/BitZeroDemo](http://bit.ly/BitZeroDemo)**
+BitZero Demos: **[http://bit.ly/BitZeroDemo](http://bit.ly/BitZeroDemo)**
 
 ---
 
@@ -78,14 +78,19 @@ This is a version of the original system Dropplets.
 Some features may not yet be present in the original version, or are not yet deployed.
 Always refer to the original design.
 
-From this version (1.03) the most profound changes will be separated from the project Dropplets.
-
 If you have any feature suggestion, please contact us.
 
+- [Version 1.04](#Version-1.05)
 - [Version 1.04](#Version-1.04)
 - [Version 1.03](#Version-1.03)
 - [Version 1.02](#Version-1.02)
 - [Version 1.01](#Version-1.01)
+
+### <a name="Version-1.05"></a>Version 1.05 - Published: Jan 25, 2014
+
+- Improving the way to show categories 
+- Separated into individual files of the code index.php file for easier maintenance. 
+- Page demos versioned.
 
 ### <a name="Version-1.04"></a>Version 1.04 - Published: Jan 25, 2014
 

@@ -1,8 +1,8 @@
 ﻿#BitZero Last Modifications
 - MBarbosaEng
 - MBarbosaEng
-- 2014/01/13 22:43 GMT
-- Static
+- 2014/01/25 22:43 GMT
+- Pages
 - published
 - bitzero,versions
 - BitZero last version, modifications & credits.
@@ -14,9 +14,15 @@
 **BitZero Demo**: **[http://bit.ly/BitZeroDemo](http://bit.ly/BitZeroDemo)**
 
 
-## Last Version
+## Last Versions
 
-[Version 1.04](https://github.com/MBarbosaEng/BitZero)
+### <a name="Version-1.05"></a>Version 1.05 - Published: Jan 25, 2014
+
+- Improving the way to show categories 
+- Separated into individual files of the code index.php file for easier maintenance. 
+- Page demos versioned.
+
+### <a name="Version-1.04"></a>Version 1.04 - Published: Jan 25, 2014
 
 This version has been deployed all existing Pull Requests until the present time. 
 This allows for better compatibility with Dropplets. 
