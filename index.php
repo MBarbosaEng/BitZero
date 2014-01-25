@@ -128,21 +128,21 @@ if ($filename==NULL) {
             // Generate the published date.
             $published_date = localDate($published_iso_date); //mod for i18n - original: date_format(date_create($published_iso_date), $date_format);
 
-            // Get the post category.
-            $post_category = $post['post_category'];
+            // Get the post categories.
+            $post_categories = $post['post_categories'];
             
-            // Get the post category link.
-            $post_category_link = $blog_url.'category/'.urlencode(trim(strtolower($post_category)));
+            // Get the post categories link.
+            $post_categories_links = array_map(function($e) { return BLOG_URL . 'category/'.urlencode(trim(strtolower($e))); }, $post_categories);
 
             // Get the post status.
-            $post_status = $post['post_status'];   
+            $post_status = trim(strtolower($post['post_status']));   
             
             // Get the posts tags.
             $temp_tags = $post['post_tags'];
             if (count($temp_tags)>0) {
                 $post_tags = "<li>Tags:";        
                     foreach($temp_tags as $tag) {
-                        $post_tags .= "&nbsp;<a href='" . $blog_url. "tag/" . urlencode(trim(strtolower($tag))) . "'>" . trim($tag) . "</a>";
+                        $post_tags .= "&nbsp;<a href='" . BLOG_URL . "tag/" . urlencode(trim(strtolower($tag))) . "'>" . trim($tag) . "</a>";
                     }
                 $post_tags .= "</li>";
             } else {
@@ -160,11 +160,12 @@ if ($filename==NULL) {
 
             // Get the post link.
             if ($category) {
-                $post_link = trim(strtolower($post_category)).'/'.str_replace(FILE_EXT, '', $post['fname']);
+                $post_link = trim(strtolower($category)).'/'.str_replace(FILE_EXT, '', $post['fname']); // open post in category
             } else {
                 $post_link = $blog_url.str_replace(FILE_EXT, '', $post['fname']);
             }
-
+            $post_link = $blog_url.str_replace(FILE_EXT, '', $post['fname']); // make link unique
+            
             // Get the post image url.
             $image = str_replace(array(FILE_EXT), '', POSTS_DIR.$post['fname']).'.jpg';
             if (file_exists($image)) {
@@ -400,10 +401,11 @@ else {
         $published_date = localDate($published_iso_date); //mod for i18n - original: date_format(date_create($published_iso_date), $date_format);
 
         // Get the post category.
-        $post_category = trim(str_replace(array("\n", '-'), '', $fcontents[4]));
+        $post_categories = explode(',', str_replace(array("\n", '-'), '', $fcontents[4]));
+        $post_categories = array_map(function($el) { return trim($el); }, $post_categories);
         
         // Get the post status.
-        $post_status = trim(str_replace(array("\n", '-'), '', $fcontents[5]));
+        $post_status = trim(strtolower(str_replace(array("\n", '-'), '', $fcontents[5])));
         
         // Get the posts tags.
         $temp_tags = explode(',', trim(str_replace(array("\n", '-'), '', $fcontents[6])));
@@ -428,8 +430,8 @@ else {
          // Get the post intro.
         $post_intro = MarkdownToHtml(htmlspecialchars(trim(str_replace(array("\n", '-'), '', $fcontents[7]))));
         
-        // Get the post category link.
-        $post_category_link = $blog_url.'category/'.urlencode(trim(strtolower($post_category)));
+        // Get the post categories link.
+        $post_categories_links = array_map(function($e) { return BLOG_URL . 'category/'.urlencode(trim(strtolower($e))); }, $post_categories);
 
         // Get the post link.
         $post_link = $blog_url.str_replace(array(FILE_EXT, POSTS_DIR), '', $filename);
@@ -529,6 +531,20 @@ else {
     $port = $_SERVER["SERVER_PORT"];
     $path = $_SERVER["REQUEST_URI"];
 
+    //Fix bug where if the site is called with index.php in the URL
+    $path_last_element = end(explode("/", $path));
+    $file_name = end(explode("/", __FILE__));
+    if ($path_last_element === $file_name) {  
+          /* If the last part of the URI is the same as the
+          * last part of the __FILE__ (the file's name). 
+          * Remove it from the end.
+          *
+          * Using substr() since str_replace() could remove more than 
+          * we would like.
+          */
+         $path = substr ($path, 0, -strlen($path_last_element));
+    }
+    
     // Check if running on alternate port.
     if ($protocol === "https://") {
         if ($port === 443)

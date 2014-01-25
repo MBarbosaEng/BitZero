@@ -220,3 +220,12 @@ msgstr "Mostrar modelos"
 
 msgid "Hide Templates"
 msgstr "Esconder modelos"
+
+msgid "Publish predated posts?"
+msgstr "Publicar artigos pré-datados?"
+
+msgid "SayYes"
+msgstr "Sim"
+
+msgid "SayNo"
+msgstr "Não"

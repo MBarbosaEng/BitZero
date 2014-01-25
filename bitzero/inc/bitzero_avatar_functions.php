@@ -378,12 +378,22 @@ function getLanguages() {
 }
 
 function showHideTemplates() {
-		if(SHOW_MARKET == "0") { 
-			echo '<option value="0" selected>' . _t('Hide Templates') . '</option>';
-            echo '<option value="1">' . _t('Show Templates') . '</option>';            
-		} else {
-			echo '<option value="0">' . _t('Hide Templates') . '</option>';        
-			echo '<option value="1" selected>' . _t('Show Templates') . '</option>';
-		}
+    echo '<div style="width:180px;">';
+    if(SHOW_MARKET === true) {
+        echo '<input type="checkbox" name="show_market" id="show_market" value="1" checked="checked" class="switch">'; 
+    } else {
+        echo '<input type="checkbox" name="show_market" id="show_market" value="1" class="switch">';           
+    } 
+    echo '<label for="show_market">' . _t('Show Templates') . '</label></div>';    
+}
+
+function showFuturePosts() {
+    echo '<div>';
+    if(FUTURE_POSTS === true) {
+        echo '<input type="checkbox" name="future-posts" id="future-posts" value="1" checked="checked" class="switch">'; 
+    } else {
+        echo '<input type="checkbox" name="future-posts" id="future-posts" value="1" class="switch">';           
+    } 
+    echo '<label for="future-posts">' . _t('Publish predated posts?') . '</label></div>';        
 }
 ?>

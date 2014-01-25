@@ -105,16 +105,22 @@ function get_Menu() {
             while (false !== ($entry = readdir($handle))) {
                 if(substr(strrchr($entry,'.'),1)==ltrim(FILE_EXT, '.')) {
                     // Get the post file.
-                    $fcontents = file(POSTS_DIR.$entry);
-                    
-                    // Get the post category.
-                    $post_category = str_replace(array("\n", '-'), '', $fcontents[4]);
-                    // Pull everything together for the loop.
-                    if (in_array($post_category, $post_categories)){
-                        // value is in array - nothing to do
-                    } else {
-                        $post_categories[] = $post_category;
-                    }                    
+                    $fcontents = file(POSTS_DIR.$entry);                  
+
+                    // Get the post category
+                    $temp_tags = explode(',', trim(str_replace(array("\n", '-'), '', $fcontents[4])));
+                    // Pull everything together for the loop.                    
+                    if (count($temp_tags)>0) {
+                        asort($temp_tags);
+                        foreach($temp_tags as $post_category) {
+                            // Pull everything together for the loop.
+                            if (in_array($post_category, $post_categories)){
+                                // value is in array - nothing to do
+                            } else {
+                                $post_categories[] = $post_category;
+                            }
+                        }                    
+                    }
                     
                     // Get the post tags
                     if(file_exists($TagFile)) {  

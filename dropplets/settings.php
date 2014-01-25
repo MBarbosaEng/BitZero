@@ -49,11 +49,12 @@ define('INTRO_TITLE', trim($intro_title));
 define('INTRO_TEXT', trim($intro_text));
 define('HEADER_INJECT', stripslashes(trim($header_inject)));
 define('FOOTER_INJECT', stripslashes(trim($footer_inject)));
-define('SHOW_MARKET', $show_market);
+define('FUTURE_POSTS', (bool) $future_posts);
+define('SHOW_MARKET', (bool) $show_market);
 define('ACTIVE_TEMPLATE', $template);
 define('language_default', $language_default);
 define('avatar_default', $avatar_default);
-define('paginationAuto', trim($paginationAuto));
+define('paginationAuto', (bool) $paginationAuto);
 define('markdownType', trim($markdownType));
 /*-----------------------------------------------------------------------------------*/
 /* Definitions (These Should Be Moved to "Settings")
@@ -75,8 +76,11 @@ $date_format = '%B %d, %Y';
 /*-----------------------------------------------------------------------------------*/
 /* Post Configuration
 /*-----------------------------------------------------------------------------------*/
-$pagination_on_off = paginationAuto; //"on"; //Infinite scroll by default?
-
+if(paginationAuto === true) {//"on"; //Infinite scroll by default?
+    $pagination_on_off = "on";
+} else {
+    $pagination_on_off = "off";
+}
 define('PAGINATION_ON_OFF', $pagination_on_off);
 
 $posts_per_page = 4;
@@ -151,11 +155,9 @@ $bitzero_dir_url = $blog_url . 'bitzero/';
 /*-----------------------------------------------------------------------------------*/
 /* Template Files
 /*-----------------------------------------------------------------------------------*/
-
 // Get the active template directory.
 $template_dir = './templates/' . $template . '/';
 $template_dir_url = $blog_url . 'templates/' . $template . '/';
-
 
 // Get the active template files.
 $index_file = $template_dir . 'index.php';

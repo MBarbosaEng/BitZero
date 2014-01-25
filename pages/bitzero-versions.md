@@ -1,6 +1,11 @@
-# BitZero
-
-BitZero is a modification of Dropplets blogging platform. Uses the same concept, but has implementations that do not exist in Dropplets platform.
+#BitZero Versions
+- MBarbosaEng
+- MBarbosaEng
+- 2013/04/28 20:30 GMT
+- Static
+- published
+- bitzero,versions
+- BitZero is a modification of Dropplets blogging platform. Uses the same concept, but has implementations that do not exist in Dropplets platform.
 
 Some modifications:
 
@@ -12,80 +17,30 @@ Some modifications:
 and much more.
 
 Some implementations made ​​aimed at improving the performance of the platform, other ease of use for users.
-Features found may have been implemented in Dropplets platform or not. For further reference, please visit the platform, so you can compare and choose the most ideal for your use case.
+Features found may have been implemented in Dropplets platform or not. For further reference, please visit the platform, so you can compare and choose the most ideal for your use case. 
 
-**BitZero GitHub**: https://github.com/MBarbosaEng/BitZero or URL: **[http://bit.ly/BitZero](http://bit.ly/BitZero)**
+## Links
+
+**BitZero GitHub**: [https://github.com/MBarbosaEng/BitZero](http://bit.ly/BitZero) or URL: **[http://bit.ly/BitZero](http://bit.ly/BitZero)**
 
 **BitZero Demo**: **[http://bit.ly/BitZeroDemo](http://bit.ly/BitZeroDemo)**
 
-**Dropplets GitHub**: https://github.com/circa75/dropplets or **[http://bit.ly/Dropplets](http://bit.ly/Dropplets)**
+## Important notice: 
 
+We must remember that it is not mandatory application of these requests and that many may be obsolete or have already been implemented by the BitZero system itself. 
 
-## Dropplets
+There are features that are in development and therefore may conflict with a specific request. So they can not be present at the time but likely to be deployed in the future. 
 
-Dropplets is a minimalist **Markdown** blogging platform focused on delivering just what you need in a blogging solution, but absolutely nothing you don't. When it comes to basic blogging, all you really want to do is write & publish which is where Dropplets excels. It's databaseless, so it installs on any server in just about 30 seconds. 
+If you have an idea but do not know how to program, share with us so we can develop it for you.
 
-## What's Markdown?
-Markdown is a text formatting syntax inspired on plain text email. It is extremely simple, memorizable and visually lightweight on artifacts so as not to hinder reading.
+## Versions
 
-> The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions.
-
-## Getting Started
-- [Installation](#installation)
-- [Posts](#posts)
-- [Dropplets License](#dropplets-license)
-- [BitZero Modifications](#bitzero-modifications)
-- [Dropplets License](#dropplets-license)
-- [BitZero License](#bitzero-license)
-
-## <a name="installation"></a>Installation
-The blogging platform is compatible with most server configurations and can be typically installed in under a minute using the few step-by-step instructions below:
-
-1. Download the latest **release** and then extract the downloaded zip file.
-3. Upload the entire contents of the extracted zip file to your web server wherever you want to be installed. 
-4. Pull up your site in any modern web browser (e.g. if you uploaded Dropplets to **yoursite.com**, load **yoursite.com** in your browser to finish the installation), then create and confirm your password.
-
-## <a name="posts"></a>Posts
-The BitZero has different resources on a few points that may have not yet been deployed in Dropplets.
-
-To better understand the differences, read the static pages of the initial installation:
-
-- About BitZero
-- About Dropplets
-- BitZero Last Modifications
-- BitZero Screenshots
-- BitZero Versions
-
-and this initial page:
-
-- Writing Post with Markdown
-
-Or visit the following repositories:
-
-**BitZero GitHub**: https://github.com/MBarbosaEng/BitZero or **[http://bit.ly/BitZero](http://bit.ly/BitZero)**
-
-**Dropplets GitHub**: https://github.com/circa75/dropplets or **[http://bit.ly/Dropplets](http://bit.ly/Dropplets)**
-
-## <a name="demo"></a>Demo
-
-BitZero Demo: **[http://bit.ly/BitZeroDemo](http://bit.ly/BitZeroDemo)**
-
----
-
-## <a name="bitzero-modifications"></a>BitZero Modifications
-
-This is a version of the original system Dropplets.
-Some features may not yet be present in the original version, or are not yet deployed.
-Always refer to the original design.
-
-From this version (1.03) the most profound changes will be separated from the project Dropplets.
-
-If you have any feature suggestion, please contact us.
-
-- [Version 1.04](#Version-1.04)
+- [Version 1.04](https://github.com/MBarbosaEng/BitZero)
 - [Version 1.03](#Version-1.03)
 - [Version 1.02](#Version-1.02)
 - [Version 1.01](#Version-1.01)
+- [Dropplets License](#dropplets-license)
+- [BitZero License](#bitzero-license)
 
 ### <a name="Version-1.04"></a>Version 1.04 - Published: Jan 25, 2014
 
@@ -95,6 +50,8 @@ This allows for better compatibility with Dropplets.
 
 Created new styles for checkbox. The style developed by [pfinkbeiner](https://github.com/pfinkbeiner) is not compatible with all browsers.
 
+#### New Features & Credits
+
 - [trims and lowers the status string](https://github.com/Circa75/dropplets/pull/315) Created by [kemmeter](https://github.com/kemmeter)
 - [Added date_create/ISO compliant timestamp information to README](https://github.com/circa75/dropplets/pull/310) Created by [bicien](https://github.com/bcicen)
 - [Add new feature for scheduled publishing.](https://github.com/circa75/dropplets/pull/300) Created by [pfinkbeiner](https://github.com/pfinkbeiner)
@@ -103,10 +60,18 @@ Created new styles for checkbox. The style developed by [pfinkbeiner](https://gi
 - [Fix bug where if the site is called with index.php in the URL](https://github.com/circa75/dropplets/pull/225) Created by [rubenvarela](https://github.com/rubenvarela)
 
 
-
 ### <a name="Version-1.03"></a>Version 1.03 - Published: Jan 12, 2014
 
 From this version (1.03) the most profound changes will be separated from the project Dropplets.
+
+#### Fixes
+
+- Corrected the minimum amount of post and category.
+- Added trim to the name used for the search Avatar.
+- Locale date format for old PHP.
+- Data recovery on remote servers using the cURL module.
+
+#### New Features
 
 - Static pages.
 - Tags.
@@ -117,7 +82,22 @@ From this version (1.03) the most profound changes will be separated from the pr
 - Added the ability to hide the theme market for speed.
 - Added the ability to load scripts locally for more speed.
 
+#### Changes
+
+- Menu with static pages allowed.
+- Template simpleI8N - 404.php style improvements.
+- Generate the Twitter Card only if exist on config.
+
 ### <a name="Version-1.02"></a>Version 1.02 - Published: Jan 03, 2014
+
+#### Fixes
+
+- Url to retrieve password.
+- Url to page 404.
+- Blog Url configuration.
+- Tests of existence of variables.
+
+#### New Features
 
 - Choose initial email in the initial configuration.
 - Choose the default avatar.
@@ -136,10 +116,33 @@ From this version (1.03) the most profound changes will be separated from the pr
 - Allows you to change the default Favicon.
 - Fonts, Scripts and Css moved to local site (if you do not find uses standard).
 - Allows you to configure how the pagination will be taken.
-- Allow Customization
 
-### Version 1.01 - Published: Dec 23, 2013
+#### Customization
 
+- Favicon.png
+> Put in the site root (./favicon.png)
+
+- Font Merriweather and Source Sans Pro
+> First searches for the file ./bitzero/other_sources/fonts/fonts.css
+
+- Loading.gif
+> First searches for the file ./bitzero/imgs/loading.gif
+
+- Modernizr.js
+> Located in ./bitzero/js/modernizr.custom.js
+
+- Jquery-1.10.2.min.js
+> First searches for the file ./bitzero/js/jquery-1.10.2.min.js
+
+- Menu.css ()
+> Located in ./bitzero/css/menu.css 
+> If you want to customize the menu, copy the file to the directory of your template and change as desired.
+
+
+
+### <a name="Version-1.01"></a>Version 1.01 - Published: Dec 23, 2013
+
+#### What is new?
 - Templates and Interface enables language selection
 - Language Pack can be created from a PO file.
 - Available languages:
@@ -156,7 +159,7 @@ From this version (1.03) the most profound changes will be separated from the pr
 - Protected Directories
 - Implemented Twetter API v1.1 for future resources
 
-## How to Translate:
+#### How to Translate:
 - Copy the en_US.po file to one of the names below:
 
 > 	da_DK, fr_FR, de_DE, el_GR, he_IL, it_IT, ja_JP, ko_KR, ru_RU, nl_NL, zh_CN, zh_TW
@@ -166,11 +169,18 @@ From this version (1.03) the most profound changes will be separated from the pr
 - Write the corresponding translation
 - Share on GitHub.
 
+## Increasing the speed of the system
 
+To increase speed, you can put scripts needed for the system to function in the same hosting provider.
+An example of this is Twitter and Tumblr. They use external scripts.
+In the case of Twitter and Tumblr, check the existing file in the README.md:
 
----
+- /bitzero/other_sources/twitter/README.md
+- /bitzero/other_sources/tumblr/README.md
 
-## <a name="dropplets-license"></a>Dropplets License
+Another solution is to disable the loading of templates (show / hide) in the setup menu.
+
+# <a name="dropplets-license"></a>Dropplets License
 
 Copyright (c) 2013 Circa75 Media, LLC
 
@@ -180,10 +190,9 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# <a name="bitzero-license"></a>BitZero License
 
-## <a name="bitzero-license"></a>BitZero License
-
-Copyright (c) 2013 M Barbosa (MBarbosaEng), EngBit
+Copyright (c) 2013/2014 M Barbosa (MBarbosaEng), EngBit
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

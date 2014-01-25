@@ -86,34 +86,50 @@ if (!isset($_SESSION['user'])) { ?>
             </div>
         </div>
         
+
         <div class="dp-row">
             <div class="dp-icon dp-icon-dropplets"></div>
             <div class="dp-content"><?php _e('Publish or Update Posts'); ?></div>
             <label class="dp-link" for="postfiles"></label>
             <input style="display: none;" type="file" name="postfiles" id="postfiles" class="postfiles" multiple="multiple" />
         </div>
-        
-        <form method="POST" action="./dropplets/save.php">
-            <div class="dp-row">
-                <div class="dp-icon dp-icon-settings"></div>
-                <div class="dp-content"><?php _e('Blog Settings'); ?></div>                
-                <a class="dp-link dp-toggle collapsed" href="#dp-settings"></a>
-                <button class="dp-button dp-button-submit" type="submit" name="submit" value="submit">k</button>
-            </div>
+      
+      
+        <form method="POST" action="./dropplets/save.php">         
+                <div class="dp-row">
+                    <div class="dp-icon dp-icon-settings"></div>
+                    <div class="dp-content"><?php _e('Blog Settings'); ?></div>                
+                    <a class="dp-link dp-toggle collapsed" href="#dp-settings"></a>
+                    <button class="dp-button dp-button-submit" type="submit" name="submit" value="submit">k</button>
+                </div>
             
+
+	
             <div class="dp-sub-panel" id="dp-settings">				
                 <div class="dp-row">
-					<div class="dp-icon dp-icon-settings"></div>
-					<div class="dp-content">
-							<select id="paginationAuto" name="paginationAuto" class="i18nSelect">
-								<?php 
-									getPaginationAuto(); 
-								?>
-							</select>
+					<div class="dp-icon"></div>
+                    <div class="dp-content">
+							<?php getPaginationAuto(); ?>
 					</div>
-                </div>	           
+                </div>                    
+
+               
                 <div class="dp-row">
-					<div class="dp-icon dp-icon-settings"></div>
+                    <div class="dp-icon"></div>  
+                    <div class="dp-content">                    
+                         <?php  showFuturePosts(); ?>
+                    </div>     
+                </div>
+               
+                <div class="dp-row">
+                    <div class="dp-icon"></div>
+                    <div class="dp-content">
+                        <?php showHideTemplates(); ?>
+                    </div>         
+                </div>                 
+
+                <div class="dp-row">
+					<div class="dp-icon"></div>
 					<div class="dp-content">
 							<select id="markdownType" name="markdownType" class="i18nSelect">
 								<?php 
@@ -135,7 +151,7 @@ if (!isset($_SESSION['user'])) { ?>
                         <label>Copyright &copy;</label>
                         <input type="text" name="copyright" id="copyright" value="<?php echo trim(COPYRIGHT); ?>">
                     </div>
-                </div>				
+                </div>	             
             </div>
             
             <div class="dp-row">
@@ -329,16 +345,12 @@ if (!isset($_SESSION['user'])) { ?>
                 </div>
             </div>
             
-            <div class="dp-row dp-editable">
-                <div class="dp-icon dp-icon-large dp-icon-grid"></div>
-                <div class="dp-content"><select name="show_market" id="show_market" class="i18nSelect"><?php showHideTemplates(); ?></select></div>         
-                <button class="dp-button dp-button-submit" style="display: block !important;" type="submit" name="submit" value="submit">k</button>
-            </div>           
+        
         </form>
         
 
         
-        <?php if (SHOW_MARKET == "1") { ?>
+        <?php if (SHOW_MARKET === true) { ?>
         
         <div class="dp-row">
             <div class="dp-icon dp-icon-large dp-icon-grid"></div>

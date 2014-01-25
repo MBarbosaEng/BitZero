@@ -165,12 +165,13 @@ function get_all_posts($options = array()) {
                 // Define the published date.
                 $post_date = str_replace('-', '', $fcontents[3]);
 
-                // Define the post category.
-                $post_category = str_replace(array("\n", '-'), '', $fcontents[4]);
+                // Define the post categories.
+                $post_categories_ = explode(',', str_replace(array("\n", '-'), '', $fcontents[4]));
+                $post_categories_ = array_map(function($el) { return trim($el); }, $post_categories_);
 
                 // Early return if we only want posts from a certain category
 				if (isset($options["category"])) { // not show warning or error if the element is not set
-					if($options["category"] && $options["category"] != trim(strtolower($post_category))) {
+					if($options["category"] && !in_array(strtolower($options["category"]), array_map('strtolower', $post_categories_))) {
 						continue;
 					}
 				}
@@ -195,17 +196,34 @@ function get_all_posts($options = array()) {
                 // Define the post content
 				$post_content = MarkdownToHtml(join('', array_slice($fcontents, 7, sizeof($fcontents) -1))); // change $fcontents.length to sizeof($fcontents)
                 
-				// Pull everything together for the loop.
-                $files[] = array('fname' => $entry, 'post_title' => $post_title, 'post_author' => $post_author, 'post_author_twitter' => $post_author_twitter, 'post_date' => $post_date, 'post_category' => $post_category, 'post_status' => $post_status, 'post_tags' => $post_tags, 'post_intro' => $post_intro, 'post_content' => $post_content);
-                $post_dates[] = $post_date;
-                $post_titles[] = $post_title;
-                $post_authors[] = $post_author;
-                $post_authors_twitter[] = $post_author_twitter;
-                $post_categories[] = $post_category;
-                $post_statuses[] = $post_status;
-                $post_tags[] = $post_tags;
-                $post_intros[] = $post_intro;
-                $post_contents[] = $post_content;
+                
+
+                if(FUTURE_POSTS === true) {
+                   if(time() >= strtotime($post_date)) {
+                     $files[] = array('fname' => $entry, 'post_title' => $post_title, 'post_author' => $post_author, 'post_author_twitter' => $post_author_twitter, 'post_date' => $post_date, 'post_categories' => $post_categories_, 'post_tags' => $post_tags, 'post_status' => $post_status, 'post_intro' => $post_intro, 'post_content' => $post_content);
+                     $post_dates[] = $post_date;
+                     $post_titles[] = $post_title;
+                     $post_authors[] = $post_author;
+                     $post_authors_twitter[] = $post_author_twitter;
+                     $post_categories[] = $post_categories_;
+                     $post_tags[] = $post_tags;
+                     $post_statuses[] = $post_status;
+                     $post_intros[] = $post_intro;
+                     $post_contents[] = $post_content;
+                   }
+                } else {                
+                    // Pull everything together for the loop.
+                    $files[] = array('fname' => $entry, 'post_title' => $post_title, 'post_author' => $post_author, 'post_author_twitter' => $post_author_twitter, 'post_date' => $post_date, 'post_categories' => $post_categories_, 'post_tags' => $post_tags, 'post_status' => $post_status, 'post_intro' => $post_intro, 'post_content' => $post_content);
+                    $post_dates[] = $post_date;
+                    $post_titles[] = $post_title;
+                    $post_authors[] = $post_author;
+                    $post_authors_twitter[] = $post_author_twitter;
+                    $post_categories[] = $post_categories_;
+                    $post_statuses[] = $post_status;
+                    $post_tags[] = $post_tags;
+                    $post_intros[] = $post_intro;
+                    $post_contents[] = $post_content;
+                }                        
                 // free memory
                 unset($fcontents);
             }
@@ -395,13 +413,14 @@ define('IS_SINGLE', !(IS_HOME || IS_CATEGORY));
 /* defines default blog options 
 /*-----------------------------------------------------------------------------------*/
 function getPaginationAuto() {
-	if(paginationAuto == "on") { 
-		echo '<option value="on" selected>' . _t("Pagination On") . '</option>';
-        echo '<option value="off">' . _t("Pagination Off") . '</option>';        
-	} else {
-		echo '<option value="on">' . _t("Pagination On") . '</option>';    
-		echo '<option value="off" selected>' . _t("Pagination Off") . '</option>';
-	}
+    echo '<div>';
+    if(paginationAuto === true) {
+        echo '<input type="checkbox" name="paginationAuto" id="paginationAuto" value="1" checked="checked" class="switch">'; 
+    } else {
+        echo '<input type="checkbox" name="paginationAuto" id="paginationAuto" value="1" class="switch">';           
+    }
+   // echo '<input type="checkbox" name="paginationAuto" id="paginationAuto" value="0" class="switch">';    
+    echo '<label for="paginationAuto">' . _t('Pagination On') . '</label></div>';
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -530,6 +549,7 @@ function get_footer() { ?>
 							$("body").animate({ scrollTop: $("body").scrollTop() + 250 }, 1000);
 						},
 						success: function (res) {
+                            $('.loading-frame').remove();
 							next_page++;
 							var result = $.parseHTML(res);
 							var articles = $(result).filter(function() {
@@ -539,7 +559,6 @@ function get_footer() { ?>
 								$('.loading-frame').html(<?php _t("You've reached the end of this list."); ?>);
 								no_more_posts = true;
 							}  else {
-								$('.loading-frame').remove();
 								$('body').append(articles.slice(1));
 							}
 							loading = false;

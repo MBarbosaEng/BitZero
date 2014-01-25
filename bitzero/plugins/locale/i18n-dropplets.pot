@@ -218,3 +218,12 @@ msgstr "Show Templates"
 
 msgid "Hide Templates"
 msgstr "Hide Templates"
+
+msgid "Publish predated posts?"
+msgstr "Publish predated posts?"
+
+msgid "SayYes"
+msgstr "Yes"
+
+msgid "SayNo"
+msgstr "No"

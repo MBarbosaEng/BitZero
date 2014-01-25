@@ -127,13 +127,24 @@ if ($_POST["submit"] == "submit" && (!file_exists($settings_file) || isset($_SES
         $footer_inject = addslashes($_POST["footer_inject"]);
     }
     
-    if (isset($_POST["show_market"])) {
-         $show_market = $_POST["show_market"];
-    }
-    if(!isset($show_market)) {
-        $show_market = "1";
+    if((bool) $_POST["future-posts"] === true) {
+        $future_posts = 1;
+    } else {
+        $future_posts = 0;
+    }    
+    
+    if((bool) $_POST["show_market"] === true) {    
+        $show_market = 1;
+    } else {
+        $show_market = 0;
     }
      
+	if((bool) $_POST["paginationAuto"] === true) {  
+		$paginationAuto = 1; 
+	} else { 
+		$paginationAuto = 0; 
+	}	
+    
 	if(isset($_COOKIE['i18nLanguage'])) { 
 		$language_default = trim($_COOKIE['i18nLanguage']); 
 	}
@@ -153,14 +164,7 @@ if ($_POST["submit"] == "submit" && (!file_exists($settings_file) || isset($_SES
 	} else {
 		$copyright = "";
 	}	
-	
-	if(isset($_POST["paginationAuto"])) { 
-		$paginationAuto = $_POST["paginationAuto"]; 
-	}
-    if (!isset($paginationAuto)) { 
-		$paginationAuto = "off"; 
-	}	
-    
+	   
 	if(isset($_POST["markdownType"])) { 
 		$markdownType = $_POST["markdownType"]; 
 	}		
@@ -189,12 +193,13 @@ if ($_POST["submit"] == "submit" && (!file_exists($settings_file) || isset($_SES
     $config[] = "\$password = '".$password."';";
     $config[] = settings_format("header_inject", $header_inject);
     $config[] = settings_format("footer_inject", $footer_inject);
-    $config[] = settings_format("show_market", $show_market);
+    $config[] = "\$future_posts = ".$future_posts.";";
+    $config[] = "\$show_market = ".$show_market.";";    
     $config[] = settings_format("template", $template);
     $config[] = settings_format("language_default", $language_default);
     $config[] = settings_format("avatar_default", $avatar_default);
     $config[] = settings_format("copyright", $copyright);
-    $config[] = settings_format("paginationAuto", $paginationAuto);
+    $config[] = "\$paginationAuto = ".$paginationAuto.";";
     $config[] = settings_format("markdownType", $markdownType);
     $config[] = "?>";    
     // Create the settings file.

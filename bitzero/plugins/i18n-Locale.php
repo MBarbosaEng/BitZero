@@ -1,8 +1,8 @@
 ﻿<?php
 /*
-Plugin Name: I18n for Dropplets & BitZero
+Plugin Name: I18n for BitZero
 Plugin filename: i18n-Locale
-Version: 1.0.1
+Version: 1.0.4
 
 
 LICENSE
@@ -103,15 +103,15 @@ $timeZone = 'GMT';  // set yours - see http://us.php.net/manual/en/timezones.oth
 
 // For Windows, you need $lngWin   
 if ($language == 'en_US') {
-	$date_format = '%B %d, %Y'; // $date_format = 'F jS, Y'; // January 3th, 2013
+	$date_format = '%B %d, %Y - %I:%M %p'; // $date_format = 'F jS, Y'; // January 3th, 2013 
 	$encoding = 'UTF-8';	
     $lngWin = 'English'; 
 } else if ($language == 'pt_BR') {
- 	$date_format = '%d/%b/%Y'; // '%d/%m/%Y'; 
+ 	$date_format = '%d/%b/%Y - %H:%M Hs'; // '%d/%m/%Y'; 
 	$encoding = 'UTF-8';
     $lngWin =  'Portuguese_Brazil.1252';
 } else {
-	$date_format = '%d/%B, %Y';
+	$date_format = '%d/%B, %Y - %H:%M Hs';
     $lngWin = 'English'; 
 	$encoding = 'UTF-8';	 
 }
@@ -180,16 +180,40 @@ function _n($var, $number){
 }
 
 function localDate($dt){
-    $dt = str_replace("\\", "-", $dt);
-    $dt = str_replace("/", "-", $dt);
+    $dt = str_replace("\\", "|", $dt);
+    $dt = str_replace("/", "|", $dt);
     if (strlen($dt)<10) {
         return '';
-    } else {       
+    } else { 
+        if (strlen($dt) == 10) {    
+            //  Publish Date in YYYY/MM/DD
+            $dt = $dt . " 11:00 " . timeZone;
+        } 
+        if (strlen($dt) == 16) {
+            //   Publish Date in YYYY/MM/DD HH:MM
+            $dt = $dt . " " . timeZone;        
+        }
+        
+        //  Publish Date in YYYY/MM/DD HH:MM TMZ Format (e.g. "2013/04/28 13:51 GMT")         
         try{
-            date_default_timezone_set(timeZone); 
-            setlocale(LC_ALL,message,lngWin);
-            $aData = explode('-',$dt);
-            return strftime(date_format,mktime(0,0,0,(int)$aData[1],(int)$aData[2],(int)$aData[0]));
+            $dt = str_replace(" ", "|", trim($dt));
+            // 2014|01|04|22:26|GMT 
+            $aData = explode('|',$dt);
+            $year = (int)$aData[0];
+            $month = (int)$aData[1];
+            $day = (int)$aData[2];
+            $time = explode(':',$aData[3]);
+            $hour = (int)$time[0];
+            $minutes = (int)$time[1];            
+            $timeZone = $aData[4];
+            
+            try {
+                date_default_timezone_set($timeZone); 
+            } catch(Exception $ed){
+                date_default_timezone_set(timeZone);
+            }            
+            $timestamp = mktime($hour,$minutes,0,$month,$day,$year);
+            return strftime(date_format,$timestamp);
         } catch (Exception $e) {
             return '';
         }	

@@ -643,3 +643,65 @@ body.dp-install form input[type="text"] {
 .profile{
     min-height: 64px !important;
 }
+/***************** input checkbox ***********************/
+input.switch:empty
+{
+    margin-left: -2999px;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;  
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;    
+}
+ 
+input.switch:empty ~ label
+{
+    position: relative;
+    float: left;
+    line-height: 14px;
+    text-indent: 30px;
+    max-height: 14px;
+    margin: 2px 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  
+}
+ 
+input.switch:empty ~ label:before,
+input.switch:empty ~ label:after
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    width: 26px;
+    background-color: #c33; 
+}
+ 
+input.switch:empty ~ label:after
+{
+    width: 13px;
+    top: 1px;
+    bottom: 1px;
+    margin-left: 1px;
+    background-color: #fff;
+    -webkit-transition: all 0.1s ease-in 0.1s;
+    -o-transition: all 0.1s ease-in 0.1s;
+    transition: all 0.1s ease-in 0.1s;      
+}
+ 
+input.switch:checked ~ label:before
+{
+    background-color: #393;
+}
+ 
+input.switch:checked ~ label:after
+{
+    margin-left: 12px;
+}

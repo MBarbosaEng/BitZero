@@ -1,8 +1,8 @@
 ﻿# Writing Post with Markdown
 - admin
 - 
-- 2014/01/04
-- Posting
+- 2014/01/04 22:26 GMT
+- Posting,Markdown
 - published
 - tags,post,markdown,writing
 - Your system is all installed and ready to go. Life is good when there are no confusing databases or admins to worry about.
@@ -15,8 +15,8 @@ You can write your posts offline (using the text or Markdown editor of your choi
     # Your Post Title
     - Post Author Name (e.g. "My Name")
     - Post Author Twitter Handle (e.g. "mytwitter")
-    - Publish Date in YYYY/MM/DD Format (e.g. "2013/04/28")
-    - Post Category (e.g. "Random Thoughts")
+    - Publish Date in YYYY/MM/DD HH:MM TMZ Format (e.g. "2013/04/28 13:51 GMT")
+    - Post Categories (e.g. "Random Thoughts,Specific Thoughts")
     - Post Status (e.g. "published" or "draft")
     - Tag your post use a comma as delimiter (e.g. "development,git,workflow")
 	- Brief description of the post.
